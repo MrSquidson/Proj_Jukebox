@@ -24,6 +24,7 @@ await db.query(`
 console.log(`Inserted table actors`);
 */
 
+
 // Upload data from CSV files into the tables on remote
 /*
 await upload(db, 'db/actors.csv', `
