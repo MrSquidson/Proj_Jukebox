@@ -9,10 +9,10 @@
 </head>
 <body>
     <div id="topbar">
-        <p>Admin Panel</p>
+        <p style="font-size: 25px;">Administration Panel</p>
     </div>
     <div id="main-area">
-        <p>This is where we will put buttons etc.</p>
+        <p>This page has Admin controls for the Jukebox and shows Earnings.</p>
         <div id="PlayerCon">
             <h1>Player Controls</h1>
             <!-- Stop the currently playing song. For example if people are too rowdy or if there's an important announcement that needs to be made -->
@@ -29,9 +29,9 @@
             <h1>Earnings</h1>
             <!-- Is an Int in the Database that is counted up with the current value of a token
              I.e. current value of a token is 3 so we +3 value goes up to 5 so we +5 to the value etc. etc. -->
-            <p>Total Earnings: xxx</p>
+            <p id="totalEarnings">Total Earnings: </p>
             <!-- Int Counter in the database that counts up based on token usage.-->
-            <p>Total Tokens Used:</p>
+            <p id="tokensUsed">Total Tokens Used: </p>
         </div>
     </div>
 
