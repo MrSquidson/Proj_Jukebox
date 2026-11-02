@@ -17,4 +17,3 @@ function onEachRequest(request, response, next) {
     console.log(new Date(), request.method, request.url);
     next();
 }
-let count = 0;
