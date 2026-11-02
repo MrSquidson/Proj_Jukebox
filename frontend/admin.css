@@ -1,0 +1,17 @@
+div#topbar {
+    background-color: red;
+    height: 4vh;
+    width: auto;
+    margin-top: 8;
+    margin-bottom: 0;
+}
+div#main-area{
+    background-color: blue;
+    height: 94.5vh;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 8;
+}
+p {
+    margin: 0;
+}
