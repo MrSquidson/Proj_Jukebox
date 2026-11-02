@@ -14,7 +14,7 @@
     <div id="main-area">
         <p>This is where we will put buttons etc.</p>
         <div id="PlayerCon">
-            <p>Player Controls</p>
+            <h1>Player Controls</h1>
             <!-- Stop the currently playing song. For example if people are too rowdy or if there's an important announcement that needs to be made -->
             <button>Stop Song</button>
             <!-- Start the song that was stopped previously. Shouldnt work if there is no song playing-->
@@ -25,8 +25,12 @@
             <button>Refund Song</button>
         </div>
         <div id="ProjEarnings">
-            <p>Projected Earnings</p>
+            <!-- Section to have projected earnings based on plays, should be calculated based on total token usage from the Database.-->
+            <h1>Earnings</h1>
+            <!-- Is an Int in the Database that is counted up with the current value of a token
+             I.e. current value of a token is 3 so we +3 value goes up to 5 so we +5 to the value etc. etc. -->
             <p>Total Earnings: xxx</p>
+            <!-- Int Counter in the database that counts up based on token usage.-->
             <p>Total Tokens Used:</p>
         </div>
     </div>
