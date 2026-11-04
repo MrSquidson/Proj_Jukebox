@@ -1,9 +1,9 @@
 const earningsElement = document.getElementById('totalEarnings');
 const tokensElement = document.getElementById('tokensUsed');
-
+/*
 onGetEarnings(earningsElement);
 onGetTokens(tokensElement);
-
+*/
 async function onGetEarnings(element) {
     // Here we register what the total earnings is using an API call to the database 
     element.textContent = 'Fetching earnings...';
