@@ -9,6 +9,7 @@ const tables = [
 
 ]
 
+
 // drop all tables present in the list.
 await tables.forEach(async (db_table) => {
     await db.query(`drop table if exists ${db_table}`);
