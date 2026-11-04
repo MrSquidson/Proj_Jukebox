@@ -50,24 +50,6 @@ server.get('/api/queue', (request, response) => {
     });
 });
 
-server.get('/api/tables', async (request, response) => {
-    try {
-    const result = await db.query(`
-        SELECT table_name
-        FROM information_schema.tables
-        WHERE table_schema = 'public'
-        ORDER BY table_name
-
-    `);
-
-    response.json(result.rows);
-    } catch (error) {
-        console.error(error);
-        response.status(500).json({
-            error: "Kunne ikke hente tabeller"
-        });
-    }
-});
 server.get('/api/tracks', async (request, response) => {
     try {
         const result = await db.query(
