@@ -6,7 +6,10 @@ const timestamp = (await db.query('select now() as timestamp')).rows[0]['timesta
 console.log(`Recreating database on ${timestamp}...`);
 
 const tables = [
-
+    "albumSongs",
+    "albums",
+    "songs",
+    "artists"
 ]
 
 
@@ -16,6 +19,49 @@ await tables.forEach(async (db_table) => {
     console.log(`Dropped table ${db_table}`);
 });
 
+await db.query(`
+    create table artists (
+        artist_id   integer primary key,
+        stage_name  text not null,
+        nationality char(2) not null,
+        unique (stage_name, nationality)
+    )
+`);
+
+await db.query(`
+    create table songs (
+        song_id     integer primary key,
+        title       text not null,
+        artist_id   integer not null,
+        CONSTRAINT FK_ArtistID FOREIGN KEY (artist_id)
+        REFERENCES artists(artist_id)
+    )
+`);
+
+await db.query(`
+    CREATE TABLE albums (
+        album_id    integer primary key,
+        title       text,
+        artist_id   integer not null,
+        unique(title, artist_id),
+        CONSTRAINT FK_ArtistID FOREIGN KEY (artist_id)
+        REFERENCES artists(artist_id)
+    )
+`);
+
+await db.query(`
+    create table albumSongs (
+        album_id    integer,
+        song_id     integer,
+        unique(album_id, song_id),
+        CONSTRAINT FK_AlbumID FOREIGN KEY (album_id)
+        REFERENCES albums(album_id),
+        CONSTRAINT FK_SongID FOREIGN KEY (song_id)
+        REFERENCES songs(song_id)
+    )
+`);
+
+
 // Insert tables in the remote database
 /*
 await db.query(`
@@ -24,6 +70,24 @@ await db.query(`
 `);
 console.log(`Inserted table actors`);
 */
+
+await db.query(`
+    insert into artists (artist_id,stage_name,nationality)
+    values (1,'foobar','DA'),(2,'Bikstok','DA'),(3,'Royalty Free Music','EN')
+`);
+console.log(`Inserted table artists`);
+
+await db.query(`
+    insert into songs (song_id,title,artist_id)
+    values (1,'foobars vilde rap',1),(2,'Uranium',2),(3,'Tyveknægt',2),(4,'Sneaky Snitch',3),(5,'Spinning Monkeys',3)
+`);
+console.log(`Inserted table songs`);
+
+await db.query(`
+    insert into albums (album_id,title,artist_id)
+    values (1,'foobars store album',1),(2,'Uranium',2),(3,'Royalty Free Music',3)
+`);
+console.log(`Inserted table albums`);
 
 // Upload data from CSV files into the tables on remote
 /*
