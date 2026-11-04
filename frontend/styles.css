@@ -1,100 +1,36 @@
-/*body {
-    margin: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.oversigt {
-    text-align: center;
-}
-
-.knapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.knapper a {
-    background-color: black;
-    color: white;
-    padding: 20px 40px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 20px;
-}
-.knapper a:hover {
-    background-color: gray;
-}
-.sange {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.container {
-    text-align: left;
-    display: flex;
-    gap: 20px;
-}
-.col {
-    text-align: left;
-    padding: 20px;
-}
-.col1 {
-    text-align: left;
-    padding: 20px;
-}
-.col2 {
-    text-align: left;
-    padding: 20px;
-}
-
-.hjem-knap {
-    background-color: black;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.hjem-knap:hover {
-    background-color: gray;
-}*/
-
-
+/* Her bliver det generelle layout for siden lavet, så det er nemt at navigere rundt på siden */
 body {
     background-color: #181824;
     color: white;
     font-family: Arial, sans-serif;
-    margin: 0;
     padding: 20px;
 }
-
+/* Her bliver overskriften lavet, så den er centreret og har en flot lilla farve */
 h1 {
     text-align: center;
     color: #b967ff;
     font-size: 50px;
 }
-
+/* Her bliver teksten lavet, så den er centreret og har en hvid farve */
 p {
     text-align: center;
     color: white;
-    margin-left: 30px;
+    font-size: 20px;
 }
-
+/* Her bliver der lavet css til hjem knappen, så man kan se når man tager musen henover den*/
 button:hover, .hjem-knap:hover {
-    background-color: #b967ff;
+    background-color: black;
 }
+/* Her bliver der lavet css til de forskellige knapper på oversigt siden
+så der er mellemrum mellem dem, og de står rigtigt på siden*/
 .knapper {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
-
+/* Her bliver der lavet css til knapperne, så de har en sort baggrundsfarve, hvid tekst, og en rund kant
+og så teksten ikke har en streg under, samt at størrelsen er korrekt */
 .knapper a {
     background-color: black;
     color: white;
@@ -103,11 +39,14 @@ button:hover, .hjem-knap:hover {
     border-radius: 10px;
     font-size: 20px;
 }
+/* Her laves der en grå farve så man kan se når man tager musen henover knapperne */
 .knapper a:hover {
     background-color: gray;
 }
+/* Her laves hjem knappen, som er på de forskellige sider, og sørger for den er rigtig placeret oppe i venstre hjørne,
+ samt har en sort baggrundsfarve, hvid tekst, og en rund kant */
 .hjem-knap {
-    background-color: purple;
+    background-color: black;
     color: white;
     padding: 12px 25px;
     border-radius: 8px;
@@ -116,17 +55,35 @@ button:hover, .hjem-knap:hover {
     left: 20px;
     text-decoration: none;
 }
-
+/* Her laves grå farve så man kan se når man tager musen henover hjem knappen */
 .hjem-knap:hover {
     background-color: gray;
 }
+/* Her laves kolonnerne på de forskellige sider, så de kommer ud i venstre side, og har den rigtige størrelse */
 .col {
     text-align: left;
     padding: 20px;
     font-size: 20px;
 }
-
+/* Det er teksten på de forskellige sider, som bliver lavet så den er venstrejusteret, og har den rigtige størrelse */
 .b{
     text-align: left;
     font-size: 20px;
+}
+/* Her bliver knappen lavet til betalingssiden, så den er sat op i højre hjørne, og har den rigtige størrelse
+og den samme stil som de andre knapper. */
+.pay-btn {
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+    position:absolute; 
+    top: 20px;
+    right: 20px;
+}
+/* Her bliver der lavet en grå farve, så man kan se når man tager musen henover knappen */
+.pay-btn:hover {
+    background-color: gray;
 }

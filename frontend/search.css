@@ -1,0 +1,65 @@
+/* Her bestemmes udseende af søgesiden */
+body {
+    background-color: #181824;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+/* Her bliver overskriften lavet, så den er centreret og har en flot lilla farve */
+h1 {
+    text-align: center;
+    color: #b967ff;
+    font-size: 50px;
+}
+/* Her bliver teksten lavet, så den er centreret og har en hvid farve */
+p {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+/*Her laves selve søgefeltet, og bestemt hvor meget afstan der skal være til knappen*/
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+/*Her laves css til søgefeltet, som bestemmer hvor stort det er, og hvordan boksen skal se ud
+og farven på teksten, der bliver skrevet ind*/
+.searchInput {
+    padding: 12px;
+    width: 300px;
+    border-radius: 8px;
+    border: none;
+    color: black;
+    font-size: 16px;
+}
+/*Her laves css til søgeknappen, som bestemmer hvordan den skal se ud, og størrelse på den osv.*/
+.searchButton {
+    background: black;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/*Her laves den grå når man tager musen henover søgeknappen*/
+.searchButton:hover {
+    background-color: grey;
+}
+/* Her laves css til hjem knappen, og det er identisk med de andre sider.*/
+.hjem-knap {
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+}
+/* Her laves den grå når man tager musen henover.*/
+.hjem-knap:hover {
+    background-color: gray;
+}
