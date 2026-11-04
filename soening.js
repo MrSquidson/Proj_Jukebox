@@ -9,6 +9,11 @@ const results = document.getElementById("results");
 // Jeg har brugt getElementById() til at forbinde JavaScript med søgefeltet i HTML.
 // Jeg har brugt filter() og includes() til at finde sange og albums, der passer til brugerens søgning.
 // Jeg har også brugt addEventListener(), så søgningen reagerer, når brugeren skriver eller trykker på søgeknappen.
+// jeg har brugt trim trim() for at fjern unødvendige mellemrum, så søgninge er mere præscis
+// jeg har brugt filter() til at sortere sangene, så kun dem, der passer til søgningen, bliver vist. 
+// jeg har brugt includes() til at brugerne ikke behøver og skrive hele sangens eller albummes navn.
+// Jeg har brugt forEach til at vise alle det sangene der findes, som søgeninge finder 
+// Jeg har brugt searhMusic funtion for at samle hele søgningen et sted, så koden bliver nemmere at forstår 
 
 
 function searchMusic() {
