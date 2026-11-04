@@ -1,1 +1,46 @@
-skriv licens, i top following files og licens under sangene, tilføj gerne artist, årstal, længde
+# NOTICE – Proj_Jukebox
+
+## Project Information
+
+Project: Proj_Jukebox  
+Institution: Erhvervsakademi Aarhus  
+Purpose: Educational prototype developed using JavaScript, HTML, CSS, Node.js, Express and PostgreSQL.
+
+## Music Metadata
+
+The following tracks are referenced in the jukebox database:
+
+| ID | Title | Artist | Album | Year | Duration |
+|---|---|---|---|---|---|
+| 1 | For Those About to Rock (We Salute You) | AC/DC | For Those About to Rock (We Salute You) | 1981 | 5:44 |
+| 2 | Balls to the Wall | Accept | Balls to the Wall | 1983 | 5:43 |
+| 3 | Fast As a Shark | Accept | Restless and Wild | 1982 | 3:49 |
+| 4 | Restless and Wild | Accept | Restless and Wild | 1982 | 4:12 |
+| 5 | Princess of the Dawn | Accept | Restless and Wild | 1982 | 6:15 |
+
+## Copyright and Licensing
+
+All listed musical compositions and original sound recordings are protected by copyright.
+
+Original release labels include:
+- AC/DC: Atlantic Records
+- Accept – Balls to the Wall: RCA / Portrait Records
+- Accept – Restless and Wild: Brain Records
+
+The project does not claim ownership of these musical works or sound recordings.
+
+No license to distribute or publicly stream the original recordings has been verified.
+
+The music metadata is used for educational demonstration of database queries, song selection, queue management and playback logic.
+
+## Audio Files
+
+The jukebox currently uses song metadata for testing.
+
+No original copyrighted MP3 recordings are included in this documented version of the project.
+
+If audio files are added, their sources, applicable licenses, attribution requirements and permissions must be documented before distribution or deployment.
+
+## Disclaimer
+
+This NOTICE file provides information about third-party music references. It does not grant permission to copy, distribute, stream or publicly perform copyrighted music.

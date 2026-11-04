@@ -9,7 +9,7 @@ const server = express();
 server.use(express.static('frontend'));
 server.use(express.json());
 server.use(onEachRequest);
-// server.get('/api/queue/:id', onGetaddToQueue);
+//Modtager et sang-ID, finder sangen i databasen og tilføjer den til køen
 server.post('/api/queue',async (request, response) => {
  const trackId = request.body.track_id;
 
@@ -44,12 +44,13 @@ server.post('/api/queue',async (request, response) => {
         });
     }
 }); 
+//Viser alle sange, der venter i køen
 server.get('/api/queue', (request, response) => {
     response.json({
         queue: queue
     });
 });
-
+// Henter de første 5 sange fra databasen
 server.get('/api/tracks', async (request, response) => {
     try {
         const result = await db.query(
@@ -64,7 +65,7 @@ server.get('/api/tracks', async (request, response) => {
         });
     }
 });
-
+// Henter og fjerner den første sang i køen
 server.post('/api/queue/next', (request, response) => {
     const nextSong = playNextSong();
 
@@ -83,14 +84,14 @@ server.post('/api/queue/next', (request, response) => {
 });
 
 server.listen(port, onServerReady);
-
+// Gemmer sangene i den rækkefølge, de bliver tilføjet
 let queue = [];
-
+// Tilføjer en ny sang til slutningen af køen
 function addToQueue(song)  {
   queue.push(song);
 }
 
-
+// Kontrollerer om køen er tom, ellers hentes og fjernes næste sang
 function playNextSong() {
     if (queue.length === 0) {
         console.log("Køen er tom!");
@@ -101,17 +102,6 @@ function playNextSong() {
     console.log("Afspiller nu:", nextSong);
     return nextSong;
 }
-
- // addToQueue("Song A");
- // addToQueue("Song B");
-
- // playNextSong();
- // playNextSong();
- // playNextSong();
-
- // console.log("Sange tilbage i køen:", queue);
-
-
 
 function onServerReady() {
     console.log('Webserver running on port', port);
