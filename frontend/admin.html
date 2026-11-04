@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Exact styling hasnt been decided yet. As such i've made a temporary one.-->
+    <link rel="stylesheet" href="admin.css">
+    <title>Jukebox - Admin Panel</title>
+</head>
+<body>
+    <div id="topbar">
+        <p style="font-size: 25px;">Administration Panel</p>
+    </div>
+    <div id="main-area">
+        <p>This page has Admin controls for the Jukebox and shows Earnings.</p>
+        <div id="PlayerCon">
+            <h1>Player Controls</h1>
+            <!-- Stop the currently playing song. For example if people are too rowdy or if there's an important announcement that needs to be made -->
+            <button>Stop Song</button>
+            <!-- Start the song that was stopped previously. Shouldnt work if there is no song playing-->
+            <button>Start Song</button>
+            <!-- Skips the song and refunds a token to the user that started it-->
+            <button>Skip Song</button>
+            <!-- Refunds a token to the user that started it-->
+            <button>Refund Song</button>
+        </div>
+        <div id="ProjEarnings">
+            <!-- Section to have projected earnings based on plays, should be calculated based on total token usage from the Database.-->
+            <h1>Earnings</h1>
+            <!-- Is an Int in the Database that is counted up with the current value of a token
+             I.e. current value of a token is 3 so we +3 value goes up to 5 so we +5 to the value etc. etc. -->
+            <p id="totalEarnings">Total Earnings: </p>
+            <!-- Int Counter in the database that counts up based on token usage.-->
+            <p id="tokensUsed">Total Tokens Used: </p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

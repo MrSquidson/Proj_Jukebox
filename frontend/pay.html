@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Jukebox - Betaling</title>
+
+    <!-- Henter vores CSS-fil, som bestemmer sidens udseende -->
+    <link rel="stylesheet" href= "pay.css">
+</head>
+<body>
+
+    <!-- Sidens overskrift -->
+    <header>
+        <h1>JUKEBOX</h1>
+        <p>Betaling</p>
+    </header>
+
+    <main>
+        <!-- Her vises sangene, som kunden vil købe -->
+        <h2>Din kurv</h2>
+        <div id="cart"></div>
+
+        <!-- Her vises den samlede pris -->
+        <h3 id="total">Subtotal: 0 kr.</h3>
+
+        <hr>
+
+        <!-- Kunden vælger sin betalingsmetode -->
+        <h2>Betalingsmetode</h2>
+
+        <label>
+            <!-- Radio-knapper gør, at man kun kan vælge én mulighed -->
+            <input type="radio" name="payment" value="Kort">
+            Betalingskort
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="radio" name="payment" value="MobilePay">
+            MobilePay
+        </label>
+
+        <br><br>
+
+        <!-- Når kunden trykker her, bliver pay-funktionen kørt -->
+        <button onclick="pay()">Betal nu</button>
+
+        <!-- Her vises en besked efter kunden har trykket på betal -->
+        <p id="message"></p>
+    </main>
+
+    <!-- Henter vores JavaScript-fil, som får siden til at fungere -->
+    <script src="pay.js"></script>
+
+</body>
+</html>
