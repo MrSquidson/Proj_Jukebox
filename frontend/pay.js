@@ -1,7 +1,8 @@
 // Her laver vi en liste med de sange, der ligger i kurven
 let cart = [
-    { title: "Smells Like Teen Spirit", artist: "Nirvana", price: 10 },
-    { title: "Highway To Hell", artist: "ACDC", price: 10 }
+    { title: "Smells Like Teen Spirit", artist: "Nirvana", price: 1 },
+    { title: "Highway To Hell", artist: "ACDC", price: 1
+     }
 ];
 
 // Vi finder de forskellige HTML-elementer, som vi skal bruge
@@ -18,14 +19,14 @@ cart.forEach(function(song) {
     // Vi viser sangens titel, kunstner og pris på hjemmesiden
     cartElement.innerHTML +=
         "<p>" + song.title + " - " + song.artist +
-        " - " + song.price + " kr.</p>";
+        " - " + song.price + " tk.</p>";
 
     // Vi lægger sangens pris oven i den samlede pris
     total = total + song.price;
 });
 
 // Vi viser den samlede pris på hjemmesiden
-totalElement.textContent = "Subtotal: " + total + " kr.";
+totalElement.textContent = "Subtotal: " + total + " tk.";
 
 
 // Denne funktion bliver kørt, når kunden trykker på "Betal nu"
