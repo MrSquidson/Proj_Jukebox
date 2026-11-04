@@ -1,0 +1,85 @@
+/* Bestemmer det generelle udseende på hele siden */
+body {
+    background-color: #202329;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    margin: 0;
+}
+
+/* Styling af sidens øverste område */
+header {
+    background-color: #15171b;
+    padding: 20px;
+    border-bottom: 3px solid #d6a64f;
+}
+
+/* Giver overskriften en gylden farve */
+h1 {
+    color: #e9b96e;
+}
+
+/* Styling af det område, hvor betaling foregår */
+main {
+    background-color: #f4f0e8;
+    color: #252525;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Giver kurven en hvid baggrund */
+#cart {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Styling af betalingsknappen */
+button {
+    background-color: #d6a64f;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Ændrer knappens farve, når musen holdes over den */
+/* Stor betalingsknap, der er nem at trykke på en tablet */
+button {
+    background-color: #d6a64f;
+    color: #202329;
+
+    width: 100%;
+    min-height: 75px;
+
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* Farven ændres, når man holder musen over knappen */
+button:hover {
+    background-color: #c18e35;
+}
+/* Gør betalingsmulighederne større */
+label {
+    display: inline-block;
+    font-size: 22px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Gør radio-knapperne større */
+input[type="radio"] {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
