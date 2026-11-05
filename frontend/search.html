@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jukebox</title>
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+<!--Her laves overskrift og underskrift-->
+    <main class="jukebox">
+        <h1>Søgning</h1>
+        <p>Find din yndlingsmusik</p>
+
+        <div class="search-box">
+            <input type="text" class="searchInput"
+                   placeholder="Søg efter sang eller album...">
+
+            <button class="searchButton">🔍 Søg</button>
+        </div>
+
+        <div class="results"></div>
+    </main>
+<!--her referes til javascript siden, så det virker-->
+    <script src="script.js"></script>
+    <!-- Hjem knap til siden-->
+    <a href="index.html" class="hjem-knap">Hjem</a>
+</body>
+</html>
