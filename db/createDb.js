@@ -9,7 +9,8 @@ const tables = [
     "albumSongs",
     "albums",
     "songs",
-    "artists"
+    "artists",
+    "genres"
 ]
 
 const indexes = [
@@ -36,18 +37,33 @@ await db.query(`
     )
 `);
 
+//Opretter genres
+await db.query(`
+    create table genres (
+    genre_id INTEGER PRIMARY KEY,
+    genre_name TEXT NOT NULL UNIQUE
+    
+    )
+
+`);
+
 await db.query(`
     create table songs (
         song_id     integer primary key,
         title       text not null,
         artist_id   integer not null,
-        CONSTRAINT FK_ArtistID FOREIGN KEY (artist_id)
-        REFERENCES artists(artist_id)
+        genre_id integer not null,
+
+        CONSTRAINT Fk_ArtistID FOREIGN KEY (artist_id)
+        REFERENCES artists(artist_id),
+
+        CONSTRAINT Fk_GenreID FOREIGN KEY (genre_id)
+        REFERENCES genres(genre_id)
     )
 `);
 
 await db.query(`
-    CREATE TABLE albums (
+    create table albums (
         album_id    integer primary key,
         title       text,
         artist_id   integer not null,
@@ -86,8 +102,23 @@ await db.query(`
 console.log(`Inserted table artists`);
 
 await db.query(`
-    insert into songs (song_id,title,artist_id)
-    values (1,'foobars vilde rap',1),(2,'Uranium',2),(3,'Tyveknægt',2),(4,'Sneaky Snitch',3),(5,'Spinning Monkeys',3)
+    INSERT INTO genres (genre_id, genre_name)
+    VALUES
+        (1,'Rap'),
+        (2, 'Hip Hop'),
+        (3, 'Instrumental')
+    `);
+
+console.log('Inserted table genres');
+
+await db.query(`
+    insert into songs (song_id,title,artist_id, genre_id)
+    values 
+    (1,'foobars vilde rap',1, 1),
+    (2,'Uranium',2, 2),
+    (3,'Tyveknægt',2, 2),
+    (4,'Sneaky Snitch',3, 3),
+    (5,'Spinning Monkeys',3, 3)
 `);
 console.log(`Inserted table songs`);
 
