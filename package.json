@@ -5,7 +5,8 @@
     "scripts": {
         "create-db": "node db/createDb.js",
         "dev-server": "nodemon backend/server.js",
-        "prod-server": "node backend/server.js"
+        "prod-server": "node backend/server.js",
+        "qs": "node db/createDb.js; node backend/server.js"
     },
     "dependencies": {
         "dotenv": "18.0.5",
