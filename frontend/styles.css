@@ -87,3 +87,31 @@ og den samme stil som de andre knapper. */
 .pay-btn:hover {
     background-color: gray;
 }
+
+.admin {
+    background-color: black;
+    color: white;
+    position:absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.queue {
+    position: fixed;
+    right: 0;
+    top: 200px;
+    bottom: 10px;
+
+    width: 300px;
+    padding: 20px;
+
+    border-left: 2px solid #b65cff;
+    background-color: #171721;
+
+    color: white;
+}
+
+.queue h2 {
+    color: #b65cff;
+    text-align: center;
+}
