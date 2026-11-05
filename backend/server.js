@@ -38,6 +38,7 @@ server.use(onEachRequest);
 server.get('/api/artists', onGetArtists)
 server.get('/api/artists/:artistId', onGetDiscography)
 server.get('/api/artists/:artistId/albums', onGetAlbums)
+server.get('/api/search', onSearchSongs);
 // server.get('/api/queue/:id', onGetaddToQueue);
 server.post('/api/queue',async (request, response) => {
  const trackId = request.body.track_id;
@@ -176,8 +177,6 @@ async function onGetTracks(request, response) {
 
 });
 
-server.listen(port, onServerReady);
-
 let queue = [];
 
 function addToQueue(song)  {
@@ -210,6 +209,24 @@ function playNextSong() {
     const artistsDb = await db.query(`SELECT stage_name AS Artists FROM artists`);
     response.json(artistsDb.rows);
  }
+
+async function onSearchSongs(request, response) {
+    const query = request.query.q;
+    if (typeof query !== 'string' || query.trim() === '') {
+        return response.json([]);
+    }
+
+    try {
+        const result = await db.query(
+            'SELECT title FROM songs WHERE title ILIKE $1 ORDER BY title',
+            [`%${query.trim()}%`]
+        );
+        response.json(result.rows);
+    } catch (error) {
+        console.error('Fejl ved søgning i databasen:', error);
+        response.status(500).json({ error: 'Kunne ikke søge i databasen' });
+    }
+}
 
  async function onGetDiscography(request, response) {
     const artistId = request.params.artistId;
