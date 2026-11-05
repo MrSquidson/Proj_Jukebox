@@ -21,3 +21,7 @@
 - Genre Filtering 
 - Album Filtering
 - Song list
+
+## Missing
+- Player
+- Admin panel implementation
