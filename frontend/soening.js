@@ -1,5 +1,8 @@
+import { pool } from '../db/connect.js';
 
-const songs = [];
+const db = pool();
+
+const songs = await db.query(`SELECT title FROM songs`).rows;
 
 const input = document.getElementById("searchInput");
 const button = document.getElementById("searchButton");
