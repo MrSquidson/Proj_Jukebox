@@ -39,10 +39,8 @@ server.get('/api/artists', onGetArtists)
 server.get('/api/artists/:artistId', onGetDiscography)
 server.get('/api/artists/:artistId/albums', onGetAlbums)
 server.get('/api/search', onSearchSongs);
+server.get('/api/songs', onGetSongs);
 // server.get('/api/queue/:id', onGetaddToQueue);
-server.post('/api/queue',async (request, response) => {
- const trackId = request.body.track_id;
-
 // API-ruter: Kobler adresser til funktioner
 server.post('/api/queue', onAddSongToQueue);
 server.get('/api/queue', onGetQueue);
@@ -169,42 +167,6 @@ async function onGetTracks(request, response) {
     }
 }
 
- response.json({
-    message: "Næste sang hentet",
-    song: nextSong,
-    queue: queue
-  });
-
-});
-
-let queue = [];
-
-function addToQueue(song)  {
-  queue.push(song);
-}
-
-
-function playNextSong() {
-    if (queue.length === 0) {
-        console.log("Køen er tom!");
-        return;
-    }
-
-    let nextSong = queue.shift();
-    console.log("Afspiller nu:", nextSong);
-    return nextSong;
-}
-
- // addToQueue("Song A");
- // addToQueue("Song B");
-
- // playNextSong();
- // playNextSong();
- // playNextSong();
-
- // console.log("Sange tilbage i køen:", queue);
-
-
  async function onGetArtists(request, response) {
     const artistsDb = await db.query(`SELECT stage_name AS Artists FROM artists`);
     response.json(artistsDb.rows);
@@ -267,6 +229,21 @@ async function onGetGenres(request, response) {
         response.json(genres.rows)
 }
 
+async function onGetSongs(request, response) {
+    try {
+        const songs = await db.query(`
+            SELECT s.title, a.stage_name AS artist, g.genre_name AS genre
+            FROM songs s
+            JOIN artists a ON s.artist_id = a.artist_id
+            LEFT JOIN genres g ON s.genre_id = g.genre_id
+            ORDER BY s.title
+        `);
+        response.json(songs.rows);
+    } catch (error) {
+        console.error('Fejl ved hentning af sange:', error);
+        response.status(500).json({ error: 'Kunne ikke hente sange' });
+    }
+}
 // Logger når serveren er startet
 function onServerReady() {
     console.log('Webserver running on port', port);

@@ -27,7 +27,7 @@ p {
 }
 /*Her laves css til søgefeltet, som bestemmer hvor stort det er, og hvordan boksen skal se ud
 og farven på teksten, der bliver skrevet ind*/
-.searchInput {
+#searchInput {
     padding: 12px;
     width: 300px;
     border-radius: 8px;
@@ -36,7 +36,7 @@ og farven på teksten, der bliver skrevet ind*/
     font-size: 16px;
 }
 /*Her laves css til søgeknappen, som bestemmer hvordan den skal se ud, og størrelse på den osv.*/
-.searchButton {
+#searchButton {
     background: black;
     color: white;
     border: none;
@@ -45,7 +45,7 @@ og farven på teksten, der bliver skrevet ind*/
     cursor: pointer;
 }
 /*Her laves den grå når man tager musen henover søgeknappen*/
-.searchButton:hover {
+#searchButton:hover {
     background-color: grey;
 }
 /* Her laves css til hjem knappen, og det er identisk med de andre sider.*/

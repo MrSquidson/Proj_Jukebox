@@ -12,14 +12,14 @@
         <h1>Søgning</h1>
         <p>Find din yndlingsmusik</p>
 
-        <form class="search-box" id="searchForm">
-            <input type="search" id="searchInput"
-                   placeholder="Søg efter sang..."/>
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                   placeholder="Søg efter sang eller album...">
 
-            <button id="searchButton" type="submit">🔍 Søg</button>
-        </form>
+            <button id="searchButton">🔍 Søg</button>
+        </div>
 
-        <div id="results" aria-live="polite"></div>
+        <div id="results"></div>
     </main>
 <!--her referes til javascript siden, så det virker-->
     <script src="soening.js"></script>
