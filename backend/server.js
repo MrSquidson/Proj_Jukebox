@@ -9,6 +9,9 @@ const server = express();
 server.use(express.static('frontend'));
 server.use(express.json());
 server.use(onEachRequest);
+server.get('/api/artists', onGetArtists)
+server.get('/api/artists/:artistId', onGetDiscography)
+server.get('/api/artists/:artistId/albums', onGetAlbums)
 // server.get('/api/queue/:id', onGetaddToQueue);
 server.post('/api/queue',async (request, response) => {
  const trackId = request.body.track_id;
@@ -130,6 +133,49 @@ function playNextSong() {
  // console.log("Sange tilbage i køen:", queue);
 
 
+ async function onGetArtists(request, response) {
+    const artistsDb = await db.query(`SELECT stage_name AS Artists FROM artists`);
+    response.json(artistsDb.rows);
+ }
+
+ async function onGetDiscography(request, response) {
+    const artistId = request.params.artistId;
+    const artistsDb = await db.query(`
+        SELECT s.title AS Title, a.stage_name as Artist 
+        FROM songs s
+        JOIN artists a ON s.artist_id=a.artist_id 
+        WHERE a.artist_id = $1
+        `, [artistId]);
+    response.json(artistsDb.rows);
+ }
+
+ async function onGetAlbums(request, response) {
+    const artistId = request.params.artistId;
+    const albums = await db.query(`
+        SELECT a.title FROM albums a
+        JOIN artists ar on a.artist_id=ar.artist_id
+        WHERE ar.artist_id = $1
+        `, [artistId]);
+    response.json(albums.rows);
+}
+
+async function onGetAlbumGenre(request, response) {
+    const albumId = request.params.albumId;
+    const genre = await db.query(`
+        SELECT g.genre 
+        FROM albums a
+        JOIN genre g on g.genre_id=a.genre_id
+        WHERE a.album_id = $1
+        `, [albumId]);
+        response.json(genre.rows)
+}
+
+async function onGetGenres(request, response) {
+    const genres = await db.query(`
+        SELECT genre from genres
+        `);
+        response.json(genres.rows)
+}
 
 function onServerReady() {
     console.log('Webserver running on port', port);
