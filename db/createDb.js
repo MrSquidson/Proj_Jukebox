@@ -13,6 +13,14 @@ const tables = [
     "genres"
 ]
 
+const indexes = [
+
+]
+
+await indexes.forEach(async (db_index) => {
+    await db.query(`DROP INDEX IF EXISTS ${db_index}`);
+    console.log(`Dropped index ${db_index}`)
+})
 
 // drop all tables present in the list.
 await tables.forEach(async (db_table) => {
@@ -119,6 +127,12 @@ await db.query(`
     values (1,'foobars store album',1),(2,'Uranium',2),(3,'Royalty Free Music',3)
 `);
 console.log(`Inserted table albums`);
+
+await db.query(`
+    CREATE INDEX idx_song_titles
+    ON songs (title)
+    `)
+console.log('Created song title index')
 
 // Upload data from CSV files into the tables on remote
 /*
