@@ -1,0 +1,46 @@
+# Music NOTICE – Proj_Jukebox
+
+## Project Information
+
+This project is an educational jukebox prototype developed at Erhvervsakademi Aarhus.
+
+The following audio files are used to demonstrate music playback and queue functionality.
+
+## Music Files
+
+| File | Title | Artist | Year | Duration | License |
+|---|---|---|---|---|---|
+| song1.mp3 | Make Funk | HoliznaCC0 | 2022 | 2:43 | CC0 1.0 |
+| song2.mp3 | The Power Of The Beat | Play House | 2024 | 2:41 | CC0 1.0 |
+| song3.mp3 | So Broke | HoliznaCC0 | 2022 | 3:41 | CC0 1.0 |
+
+## Sources
+
+**1. Make Funk – HoliznaCC0**
+
+https://freemusicarchive.org/music/holiznacc0/bassic/make-funk/
+
+**2. So Broke – HoliznaCC0**
+
+https://freemusicarchive.org/music/holiznacc0/busted-guitar-lofi-edit/so-broke/
+
+**3. The Power Of The Beat – Play House**
+
+https://freemusicarchive.org/music/play-house/single/the-power-of-the-beat/
+
+## Licensing
+
+All three tracks are listed by Free Music Archive as released under the Creative Commons CC0 1.0 Universal dedication.
+
+License information:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The tracks are used as test audio files for the educational jukebox prototype.
+
+The project does not claim ownership of the original musical works.
+
+## Additional Information
+
+Other song titles retrieved from the PostgreSQL database are used as metadata for testing and do not represent audio files included in this project.
+
+Only the three audio files listed above are included as playable test tracks.
